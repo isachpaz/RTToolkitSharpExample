@@ -44,7 +44,6 @@
     <Compile Include="DVH_Tests.cs" />
     <Compile Include="PrimitiveTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XDouble.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="LanguageExt.Core">

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using LanguageExt;
 using RTToolkitSharp.RTQuantities.Helpers;
 using RTToolkitSharp.RTQuantities.Quantities.Dose;
+using RTToolkitSharp.RTQuantities.Quantities.Extensions;
 using Xunit;
 
 namespace RTToolkitSharpExamples
@@ -11,7 +13,7 @@ namespace RTToolkitSharpExamples
         [Fact]
         public void PhysicalDose_Addition_Test()
         {
-            var dosis = RangeHelper<XDouble>.Range(0, 1000, 0.001).ToList();
+            var dosis = DoubleRange.FromMinMax(0.0, 1000, 0.001).Select(x => x.Gy()).ToList();
             var xs = Enumerable.Range(1, dosis.Count);
 
             foreach (var t in dosis.Zip(xs, (d, i) => Tuple.Create(d.Value, i)))
@@ -25,7 +27,7 @@ namespace RTToolkitSharpExamples
         [Fact]
         public void PhysicalDose_Multiplication_Test()
         {
-            var dosis = RangeHelper<XDouble>.Range(0, 2, 0.000001);
+            var dosis = DoubleRange.FromMinMax(0.0, 2, 0.000001).Select(x => x.Gy());
             var xs = Enumerable.Range(1, 100000000);
 
             foreach (var t in dosis.Zip(xs, (d, i) => Tuple.Create(d.Value, i)))
