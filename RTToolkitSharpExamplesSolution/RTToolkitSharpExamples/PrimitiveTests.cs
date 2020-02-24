@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Linq;
-using RTToolkitSharp.DoseVolumeHistogramLib.Factory;
-using RTToolkitSharp.DoseVolumeHistogramLib.Helpers;
 using RTToolkitSharp.RTQuantities.Helpers;
 using RTToolkitSharp.RTQuantities.Quantities.Dose;
-using RTToolkitSharp.RTQuantities.Quantities.Volume;
 using Xunit;
 
 namespace RTToolkitSharpExamples
